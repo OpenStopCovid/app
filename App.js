@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Modal, StyleSheet, Text, View, Alert, Switch, TouchableOpacity} from 'react-native';
+import {Modal, StyleSheet, Text, View, Switch, TouchableOpacity, Vibration} from 'react-native';
 
 const Separator = () => {
   return <View style={styles.separator} />
@@ -8,8 +8,12 @@ const Separator = () => {
 export default function App() {
   const [isEnabled, setIsEnabled] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-  const [isAlertMode, setIsAlertMode] = useState(true)
+  const [isAlertMode, setIsAlertMode] = useState(false)
   const toggleSwitch = () => setIsEnabled(!isEnabled);
+
+  if (isAlertMode) {
+    Vibration.vibrate([500, 250, 500, 250])
+  }
 
   return (
     <>
@@ -54,8 +58,7 @@ export default function App() {
               <Text style={styles.modalText}>😷</Text>
               <Text style={styles.modalText}>Pas de panique !</Text>
               <Text style={styles.modalText}>Une alerte va être envoyée</Text>
-              <Text style={styles.modalText}>🧑🏻‍⚕️</Text>
-
+              <Text style={styles.modalText}>🧑🏻‍⚕️ 👨🏽‍⚕️ 👩🏼‍⚕️</Text>
               <TouchableOpacity
                 style={{ ...styles.openButton, backgroundColor: "#000091" }}
                 onPress={() => {
@@ -157,8 +160,10 @@ const styles = StyleSheet.create({
   alertMode: {
     display: 'flex',
     backgroundColor: 'red',
+    color: "white",
     textAlign: "center",
     padding: 25,
-    fontSize: 15
+    fontSize: 15,
+    fontWeight: 'bold'
   }
 });
