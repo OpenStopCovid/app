@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AwesomeProject",
-    "slug": "AwesomeProject",
+    "name": "OpenStopCovid",
+    "slug": "OpenStopCovid",
     "platforms": [
       "ios",
       "android",
