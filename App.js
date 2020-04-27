@@ -1,10 +1,8 @@
 import React, {useState} from 'react'
 import {StyleSheet, Text, View, Vibration} from 'react-native'
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
 
-import Head from './components/head'
-import TrackButton from './components/track-button'
-import SickButton from './components/sick-button'
-import ScannerButton from './components/scanner-button'
 import Home from './pages/home'
 import Scanner from './pages/scanner'
 import InputCode from './pages/input-code'
@@ -13,20 +11,22 @@ import Validation from './pages/validation'
 
 export default function App() {
   const [isAlertMode, setIsAlertMode] = useState(false)
+  const Stack = createStackNavigator()
 
   if (isAlertMode) {
     Vibration.vibrate([500, 250, 500, 250])
   }
 
   return (
-    <View style={styles.container}>
-      <Validation />
-      {isAlertMode && (
-        <View>
-          <Text style={styles.alertMode}>Vous avez été en contact avec une personne diagnostiquée positive</Text>
-        </View>
-      )}
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name='Bienvenue' component={Home} />
+        <Stack.Screen name='Choix du code' component={InputCodeSelector} />
+        <Stack.Screen name='Entrée AlphaNumérique' component={InputCode} />
+        <Stack.Screen name='Scanner QR-Code' component={Scanner} />
+        <Stack.Screen name='Validation' component={Validation} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 

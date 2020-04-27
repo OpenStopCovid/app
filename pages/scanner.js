@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react'
 import {Modal, StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import {BarCodeScanner} from 'expo-barcode-scanner'
 import {Icon, Button} from 'react-native-elements'
+import HomeButton from '../components/home-button'
 
-const Scanner = () => {
+const Scanner = ({navigation}) => {
   const [cameraVisible, setCameraVisible] = useState(false)
   const [scanned, setScanned] = useState(false)
   const [code, setCode] = useState(null)
@@ -29,7 +30,7 @@ const Scanner = () => {
   }
 
   return (
-    <View style={{display: 'flex', alignSelf: 'center'}}>
+    <View style={styles.centeredView}>
       <View>
         <Text style={styles.text} >En utilisant l'appareil photo de votre téléphone, placer le QR code dans le cadre ci-dessous</Text>
       </View>
@@ -42,16 +43,16 @@ const Scanner = () => {
       </View>
       <View>
         {code && <Text style={styles.text}>Vous avez scanné le code: {code}</Text>}
-        {scanned && <Button buttonStyle={{ margin: 10, borderRadius: 10, padding: 10 }} color="#ff5c5c" type='outline' title={'Scanner un autre code'} onPress={() => setScanned(false)} />}
+        {scanned && <Button buttonStyle={{margin: 10, borderRadius: 10, padding: 10}} color="#ff5c5c" type='outline' title={'Scanner un autre code'} onPress={() => setScanned(false)} />}
       </View>
       <View style={{display: 'flex', alignSelf: 'center'}}>
-        <TouchableOpacity style={styles.myButton} onPress={() => alert(code)} >
+        <TouchableOpacity style={styles.myButton} onPress={() => navigation.navigate('Validation')} >
           <View style={styles.textButton}>
             <Icon type='feather' name='camera' color='white' size={50} />
           </View>
         </TouchableOpacity>
       </View>
-      <Text style={{display: 'flex', alignSelf: 'center'}}>retour au choix du code</Text>
+      <HomeButton navigation={navigation} />
     </View>
   )
 }

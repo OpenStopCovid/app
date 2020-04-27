@@ -1,10 +1,13 @@
 import React, {useState} from 'react'
 import {StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native'
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
 import {Icon} from 'react-native-elements'
 
-import Separator from '../components/separator.js'
+import Separator from '../components/separator'
+import HomeButton from '../components/home-button'
 
-const InputCodeSelector = () => {
+const InputCodeSelector = ({navigation}) => {
   return (
     <View style={styles.centeredView}>
       <View style={{flex: .4}} >
@@ -12,21 +15,22 @@ const InputCodeSelector = () => {
         <Separator />
         <Text style={styles.subTitle} >Afin de continuer, assurez-vous d'être en possession d'un code personnel fourni par un professionel de santé suite à un diagnostique.</Text>
       </View>
-      <View style={{flex: .4}}>
+      <View style={{flex: .6}}>
         <Text style={styles.smallTitle} >Quel type de code souhaitez-vous utiliser ?</Text>
-        <TouchableOpacity style={styles.myButton}>
+        <TouchableOpacity style={styles.myButton} onPress={() => navigation.navigate('Entrée AlphaNumérique')}>
           <View style={styles.textButton}>
             <Text style={styles.text}>alpha-numerique</Text>
             <Icon type='feather' name='hash' color='white' />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.myButton}>
+        <TouchableOpacity style={styles.myButton} onPress={() => navigation.navigate('Scanner QR-Code')}>
           <View style={styles.textButton}>
             <Text style={styles.text}>qr-code</Text>
             <Icon type='material-community' name='qrcode' color='white'  size={25} />
           </View>
         </TouchableOpacity>
       </View>
+      <HomeButton navigation={navigation} />
     </View>
   )
 }

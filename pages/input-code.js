@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import {StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native'
 
-const InputCode = () => {
+import HomeButton from '../components/home-button'
+
+const InputCode = ({navigation}) => {
   const [value, onChangeText] = useState()
   return (
-    <View>
+    <View style={styles.centeredView}>
       <Text style={styles.text}>Entrez le code fourni suite à votre diagnostique</Text>
       <TextInput
         style={styles.input}
@@ -14,24 +16,28 @@ const InputCode = () => {
       />
       <TouchableOpacity
         style={styles.myButton}
-        onPress={() => {
-          console.log(value)
-          onChangeText('')
-        }}
+        onPress={() => navigation.navigate('Validation')}
       >
         <Text style={styles.textButton}>valider</Text>
       </TouchableOpacity>
-      <Text style={styles.text}>retour au choix du code</Text>
+      <HomeButton navigation={navigation} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22
+  },
   input: {
     borderWidth: 3,
     borderRadius: 10,
     borderColor: '#436d8c',
     height: 50,
+    width: 300,
     margin: 10,
     padding: 10
   },

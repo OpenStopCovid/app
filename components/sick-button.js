@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 import {Modal, StyleSheet, Text, View, TouchableOpacity} from 'react-native'
+import {NavigationContainer} from '@react-navigation/native'
 import {Icon} from 'react-native-elements'
 
 
-
-const SickButton = () => {
+const SickButton = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false)
 
   return (
       <View>
         <TouchableOpacity
           style={styles.myButton}
-          onPress={() => setModalVisible(true)}
+          onPress={() => navigation.navigate('Choix du code')}
         >
         <View style={styles.textButton}>
           <Text style={styles.text}>
@@ -20,28 +20,6 @@ const SickButton = () => {
           <Icon type='feather' name='user' color='white' />
         </View>
         </TouchableOpacity>
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-        >
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <Text style={styles.modalText}>😷</Text>
-              <Text style={styles.modalText}>Pas de panique !</Text>
-              <Text style={styles.modalText}>Une alerte va être envoyée</Text>
-              <Text style={styles.modalText}>🧑🏻‍⚕️ 👨🏽‍⚕️ 👩🏼‍⚕️</Text>
-              <TouchableOpacity
-                style={{ ...styles.openButton, backgroundColor: "#436d8c" }}
-                onPress={() => {
-                  setModalVisible(!modalVisible)
-                }}
-              >
-                <Text style={styles.textStyle}>Fermer</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </Modal>
       </View>
   );
 }
