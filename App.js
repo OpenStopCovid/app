@@ -6,6 +6,8 @@ import TrackButton from './components/track-button'
 import SickButton from './components/sick-button'
 import ScannerButton from './components/scanner-button'
 import Home from './pages/home'
+import Scanner from './pages/scanner'
+import InputCode from './pages/input-code'
 
 export default function App() {
   const [isAlertMode, setIsAlertMode] = useState(false)
@@ -16,7 +18,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Home />
+      <InputCode />
+      
+      
       {isAlertMode && (
         <View>
           <Text style={styles.alertMode}>Vous avez été en contact avec une personne diagnostiquée positive</Text>
