@@ -21,12 +21,12 @@ const Home = () => {
 const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 22
   },
   header: {
-    alignItems: "center",
+    alignItems: 'center',
     flex: .4
   },
   section: {

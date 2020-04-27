@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, Vibration} from 'react-native';
+import React, {useState} from 'react'
+import {StyleSheet, Text, View, Vibration} from 'react-native'
 
 import Head from './components/head'
 import TrackButton from './components/track-button'
@@ -8,6 +8,8 @@ import ScannerButton from './components/scanner-button'
 import Home from './pages/home'
 import Scanner from './pages/scanner'
 import InputCode from './pages/input-code'
+import InputCodeSelector from './pages/input-code-selector'
+import Validation from './pages/validation'
 
 export default function App() {
   const [isAlertMode, setIsAlertMode] = useState(false)
@@ -18,16 +20,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <InputCode />
-      
-      
+      <Validation />
       {isAlertMode && (
         <View>
           <Text style={styles.alertMode}>Vous avez été en contact avec une personne diagnostiquée positive</Text>
         </View>
       )}
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({

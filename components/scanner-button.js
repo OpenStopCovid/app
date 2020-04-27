@@ -7,7 +7,7 @@ const ScannerButton = () => {
   const [cameraVisible, setCameraVisible] = useState(false)
   const [scanned, setScanned] = useState(false)
   const [hasPermission, setHasPermission] = useState(null);
-  const handleBarCodeScanned = ({ data }) => {
+  const handleBarCodeScanned = ({data}) => {
     setScanned(true)
     alert(`${data}`)
   }
@@ -45,11 +45,15 @@ const ScannerButton = () => {
               style={{display: 'flex', alignSelf: 'center', width: 250, height: 250, margin: 25}}
             />
 
-            {scanned && <Button buttonStyle={{ margin: 10, borderRadius: 10, padding: 12 }} color="#ff5c5c" type='outline' title={'Scanner un autre code'} onPress={() => setScanned(false)} />}
+            {scanned && <Button 
+                buttonStyle={{margin: 10, borderRadius: 10, padding: 12}}
+                type='outline' title={'Scanner un autre code'}
+                onPress={() => setScanned(false)}
+              />}
             <TouchableOpacity
-              style={{ ...styles.openButton, backgroundColor: "#436d8c" }}
+              style={{...styles.openButton, backgroundColor: '#436d8c'}}
               onPress={() => {
-                setCameraVisible(!cameraVisible);
+                setCameraVisible(!cameraVisible)
               }}
             >
               <Text style={styles.textStyle}>Fermer</Text>
@@ -88,17 +92,17 @@ const styles = StyleSheet.create({
   },
   centeredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 22
   },
   modalView: {
     margin: 20,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 20,
     padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
+    alignItems: 'center',
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2
@@ -108,19 +112,19 @@ const styles = StyleSheet.create({
     elevation: 5
   },
   openButton: {
-    backgroundColor: "#000091",
+    backgroundColor: '#000091',
     borderRadius: 10,
     padding: 10,
     elevation: 2
   },
   textStyle: {
-    color: "white",
-    textAlign: "center",
-    textTransform: "uppercase"
+    color: 'white',
+    textAlign: 'center',
+    textTransform: 'uppercase'
   },
   modalText: {
     marginBottom: 15,
-    textAlign: "center"
+    textAlign: 'center'
   }
 });
 

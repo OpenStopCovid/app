@@ -8,9 +8,9 @@ const Separator = () => {
 const styles = StyleSheet.create({
   separator: {
     marginVertical: 8,
-    borderBottomColor: '#000',
+    borderBottomColor: '#436d8c',
     borderBottomWidth: StyleSheet.hairlineWidth,
-  },
+  }
 })
 
 export default Separator

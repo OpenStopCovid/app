@@ -29,8 +29,8 @@ const TrackButton = () => {
 
 const styles = StyleSheet.create({
   centeredView: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     margin: 22
   },
   title: {
