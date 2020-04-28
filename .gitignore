@@ -1,6 +1,18 @@
 # Created by https://www.gitignore.io/api/node,macos,reactnative
 # Edit at https://www.gitignore.io/?templates=node,macos,reactnative
 
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+web-report/
+
 ### macOS ###
 # General
 .DS_Store
