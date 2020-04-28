@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {View, Text, StyleSheet, Switch, TouchableOpacity} from 'react-native'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 const TrackButton = () => {
   const [isEnabled, setIsEnabled] = useState(false)
@@ -30,8 +31,7 @@ const TrackButton = () => {
 const styles = StyleSheet.create({
   centeredView: {
     justifyContent: 'center',
-    alignItems: 'center',
-    margin: 22
+    alignItems: 'center'
   },
   title: {
     color: '#436d8c',
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     borderRadius: 180,
     borderWidth: 2,
     borderColor: '#436d8c',
-    margin: 20
+    margin: 15
   },
   dotted: {
     width: 200,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'lightgrey',
     borderStyle: 'dashed',
-    margin: 20
+    margin: 15
   },
   textButton: {
     justifyContent: 'center',

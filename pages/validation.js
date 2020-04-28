@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
 import {Icon} from 'react-native-elements'
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen'
 
 import HomeButton from '../components/home-button'
 
@@ -24,10 +25,10 @@ const styles = StyleSheet.create({
     },
     title: {
       fontSize: 32,
-      flex: .3,
       textAlign: 'center',
       color: '#436d8c',
-      padding: 15
+      padding: 25
+
     },
     subTitle: {
       textAlign: 'center',

@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import {BarCodeScanner} from 'expo-barcode-scanner'
 import {Icon, Button} from 'react-native-elements'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
+
 import HomeButton from '../components/home-button'
 
 const Scanner = ({navigation}) => {
@@ -40,8 +42,8 @@ const Scanner = ({navigation}) => {
 
       </View>
       <View>
-        {code && <Text style={styles.text}>Vous avez scanné le code: {code}</Text>}
-        {scanned && <Button buttonStyle={{margin: 10, borderRadius: 10, padding: 10}} color="#ff5c5c" type='outline' title={'Scanner un autre code'} onPress={() => setScanned(false)} />}
+        {scanned && <Button buttonStyle={{margin: 5, borderRadius: 10, padding: 5}} type='outline' title={'Scanner un autre code'} onPress={() => setScanned(false)} />}
+        {code && <Text style={styles.text}>Votre code: {code}</Text>}
       </View>
       <View style={{display: 'flex', alignSelf: 'center'}}>
         <TouchableOpacity style={styles.myButton} onPress={() => navigation.navigate('Validation')} >
@@ -57,7 +59,7 @@ const Scanner = ({navigation}) => {
 
 const styles = StyleSheet.create({
   scanner: {
-    margin: 20,
+    margin: 15,
     display: 'flex',
     alignSelf: 'center',
     borderWidth: 2,

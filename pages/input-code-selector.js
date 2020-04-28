@@ -3,6 +3,8 @@ import {StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native'
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {Icon} from 'react-native-elements'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
+
 
 import Separator from '../components/separator'
 import HomeButton from '../components/home-button'
@@ -10,13 +12,13 @@ import HomeButton from '../components/home-button'
 const InputCodeSelector = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.midHeight}>
         <Text style={styles.title}>Je suis contaminé</Text>
         <Separator />
-        <Text style={styles.subTitle} >Afin de continuer, assurez-vous d'être en possession d'un code personnel fourni par un professionnel de santé suite à un diagnostic.</Text>
+        <Text style={styles.subTitle}>Afin de continuer, assurez-vous d'être en possession d'un code personnel fourni par un professionnel de santé suite à un diagnostic.</Text>
       </View>
-      <View>
-        <Text style={styles.smallTitle} >Quel type de code souhaitez-vous utiliser ?</Text>
+      <View style={styles.midHeight}>
+        <Text style={styles.smallTitle}>Quel type de code souhaitez-vous utiliser ?</Text>
         <TouchableOpacity style={styles.myButton} onPress={() => navigation.navigate('Entrée AlphaNumérique')}>
           <View style={styles.textButton}>
             <Text style={styles.text}>alpha-numerique</Text>
@@ -36,6 +38,9 @@ const InputCodeSelector = ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
+  midHeight: {
+    height: hp('40%')
+  },
   container: {
     flex: 1,
     backgroundColor: '#FFF',
@@ -43,13 +48,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   myButton: {
-    width: 300,
+    width: wp('70%'),
+    maxWidth: 400,
+    margin: 10,
     padding: 3,
     backgroundColor: 'white',
     borderRadius: 10,
     borderWidth: 2,
     borderColor: '#436d8c',
-    margin: 20,
     alignSelf: 'center'
   },
   textButton: {
@@ -84,7 +90,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: '#436d8c',
     paddingHorizontal: 15,
-    marginTop: 35
   }
 });
 

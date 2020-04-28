@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 import HomeButton from '../components/home-button'
 
@@ -37,7 +38,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: '#436d8c',
     height: 50,
-    width: 300,
+    width: wp('90%'),
+    maxWidth: 600,
     margin: 10,
     padding: 10
   },
@@ -48,7 +50,8 @@ const styles = StyleSheet.create({
     padding: 15
   },
   myButton: {
-    width: 300,
+    width: wp('70%'),
+    maxWidth: 400,
     padding: 3,
     backgroundColor: 'white',
     borderRadius: 10,
@@ -68,7 +71,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     fontSize: 25,
     backgroundColor: '#436d8c'
-  },
+  }
 });
 
 export default InputCode

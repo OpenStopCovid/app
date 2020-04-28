@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {StyleSheet, Text, View, Vibration} from 'react-native'
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
+import {enableScreens} from 'react-native-screens'
 
 import Home from './pages/home'
 import Scanner from './pages/scanner'
@@ -10,6 +11,7 @@ import InputCodeSelector from './pages/input-code-selector'
 import Validation from './pages/validation'
 
 export default function App() {
+  enableScreens()
   const [isAlertMode, setIsAlertMode] = useState(false)
   const Stack = createStackNavigator()
   const options= {headerShown: false}

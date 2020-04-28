@@ -1,5 +1,6 @@
 import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 import SickButton from '../components/sick-button'
 import TrackButton from '../components/track-button'
@@ -23,15 +24,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    height: hp('100%')
   },
   header: {
     alignItems: 'center',
-    marginTop: 25
+    marginTop: 25,
+    height: hp('25%')
   },
   section: {
     alignItems: 'center',
-    marginTop: 55
+    marginTop: 55,
+    height: hp('50%')
   },
   subText: {
     color: '#436d8c',
