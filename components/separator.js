@@ -7,9 +7,11 @@ const Separator = () => {
 
 const styles = StyleSheet.create({
   separator: {
-    marginVertical: 8,
+    marginVertical: 18,
     borderBottomColor: '#436d8c',
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: 1,
+    width: 250,
+    alignSelf: 'center'
   }
 })
 

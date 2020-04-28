@@ -9,13 +9,13 @@ import HomeButton from '../components/home-button'
 
 const InputCodeSelector = ({navigation}) => {
   return (
-    <View style={styles.centeredView}>
-      <View style={{flex: .4}} >
+    <View style={styles.container}>
+      <View>
         <Text style={styles.title}>Je suis contaminé</Text>
         <Separator />
-        <Text style={styles.subTitle} >Afin de continuer, assurez-vous d'être en possession d'un code personnel fourni par un professionel de santé suite à un diagnostique.</Text>
+        <Text style={styles.subTitle} >Afin de continuer, assurez-vous d'être en possession d'un code personnel fourni par un professionnel de santé suite à un diagnostic.</Text>
       </View>
-      <View style={{flex: .6}}>
+      <View>
         <Text style={styles.smallTitle} >Quel type de code souhaitez-vous utiliser ?</Text>
         <TouchableOpacity style={styles.myButton} onPress={() => navigation.navigate('Entrée AlphaNumérique')}>
           <View style={styles.textButton}>
@@ -30,12 +30,18 @@ const InputCodeSelector = ({navigation}) => {
           </View>
         </TouchableOpacity>
       </View>
-      <HomeButton navigation={navigation} />
+      <HomeButton navigation={navigation} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFF',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   myButton: {
     width: 300,
     padding: 3,
@@ -43,7 +49,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 2,
     borderColor: '#436d8c',
-    margin: 20
+    margin: 20,
+    alignSelf: 'center'
   },
   textButton: {
     display: 'flex',
@@ -60,15 +67,8 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     paddingTop: 5
   },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22
-  },
   title: {
     fontSize: 32,
-    flex: .3,
     textAlign: 'center',
     color: '#436d8c',
     textTransform: 'uppercase'
@@ -77,13 +77,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#436d8c',
     paddingHorizontal: 15,
-    fontSize: 16
+    fontSize: 18
   },
   smallTitle: {
     textAlign: 'center',
     fontSize: 25,
     color: '#436d8c',
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
+    marginTop: 35
   }
 });
 

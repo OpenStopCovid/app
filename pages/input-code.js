@@ -7,7 +7,7 @@ const InputCode = ({navigation}) => {
   const [value, onChangeText] = useState()
   return (
     <View style={styles.centeredView}>
-      <Text style={styles.text}>Entrez le code fourni suite à votre diagnostique</Text>
+      <Text style={styles.text}>Entrez le code fourni suite à votre diagnostic</Text>
       <TextInput
         style={styles.input}
 

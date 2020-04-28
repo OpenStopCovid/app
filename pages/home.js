@@ -1,19 +1,15 @@
 import React from 'react'
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
-import {NavigationContainer} from '@react-navigation/native'
-import {createStackNavigator} from '@react-navigation/stack'
-import {Icon} from 'react-native-elements'
+import {View, Text, StyleSheet} from 'react-native'
 
 import SickButton from '../components/sick-button'
 import TrackButton from '../components/track-button'
-import HomeButton from '../components/home-button'
 
 const Home = ({navigation}) => {
   return (
-    <View style={styles.centeredView}>
+    <View style={styles.container}>
       <View style={styles.header}>
         <SickButton navigation={navigation} />
-        <Text style={styles.subText} >uniquement sur diagnostic d'un professionel de santé</Text>
+        <Text style={styles.subText} >uniquement sur diagnostic d'un professionnel de santé</Text>
       </View>
       <View style={styles.section}>
         <TrackButton />
@@ -23,19 +19,19 @@ const Home = ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
-  centeredView: {
+  container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#FFF',
     alignItems: 'center',
-    marginTop: 22
+    justifyContent: 'center'
   },
   header: {
     alignItems: 'center',
-    flex: .4
+    marginTop: 25
   },
   section: {
     alignItems: 'center',
-    flex: .7
+    marginTop: 55
   },
   subText: {
     color: '#436d8c',

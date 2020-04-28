@@ -12,6 +12,7 @@ import Validation from './pages/validation'
 export default function App() {
   const [isAlertMode, setIsAlertMode] = useState(false)
   const Stack = createStackNavigator()
+  const options= {headerShown: false}
 
   if (isAlertMode) {
     Vibration.vibrate([500, 250, 500, 250])
@@ -20,23 +21,17 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name='Bienvenue' component={Home} />
-        <Stack.Screen name='Choix du code' component={InputCodeSelector} />
-        <Stack.Screen name='Entrée AlphaNumérique' component={InputCode} />
-        <Stack.Screen name='Scanner QR-Code' component={Scanner} />
-        <Stack.Screen name='Validation' component={Validation} />
+        <Stack.Screen name='Bienvenue' component={Home} options={options} />
+        <Stack.Screen name='Choix du code' component={InputCodeSelector} options={options} />
+        <Stack.Screen name='Entrée AlphaNumérique' component={InputCode} options={options} />
+        <Stack.Screen name='Scanner QR-Code' component={Scanner} options={options}/>
+        <Stack.Screen name='Validation' component={Validation} options={options}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   alertMode: {
     display: 'flex',
     backgroundColor: 'red',

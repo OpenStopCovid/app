@@ -1,18 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import {Modal, StyleSheet, Text, View, TouchableOpacity} from 'react-native'
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import {BarCodeScanner} from 'expo-barcode-scanner'
 import {Icon, Button} from 'react-native-elements'
 import HomeButton from '../components/home-button'
 
 const Scanner = ({navigation}) => {
-  const [cameraVisible, setCameraVisible] = useState(false)
   const [scanned, setScanned] = useState(false)
   const [code, setCode] = useState(null)
   const [hasPermission, setHasPermission] = useState(null);
   const handleBarCodeScanned = ({data}) => {
     setScanned(true)
     setCode(data)
-    console.log(code)
   }
 
   useEffect(() => {
@@ -36,7 +34,7 @@ const Scanner = ({navigation}) => {
       </View>
       <View style={styles.scanner}>
         <BarCodeScanner
-          style={{display: 'flex', alignSelf: 'center', width: 200, height: 200}}
+          style={{display: 'flex', alignSelf: 'center', width: 200, height: 200, borderRadius: 5, overflow: 'hidden'}}
           onBarCodeScanned={handleBarCodeScanned}
         />
 
@@ -64,6 +62,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderWidth: 2,
     borderColor: '#436d8b',
+    borderRadius: 10,
     padding: 5
   },
   myButton: {
@@ -88,7 +87,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#436d8c',
-    fontSize: 15,
+    fontSize: 18,
     textAlign: 'center',
     paddingHorizontal: 5
   },

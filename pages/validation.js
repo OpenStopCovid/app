@@ -2,12 +2,15 @@ import React, {useState} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
 import {Icon} from 'react-native-elements'
 
-const Validation = () => {
+import HomeButton from '../components/home-button'
+
+const Validation = ({navigation}) => {
   return (
       <View style={styles.centeredView}>
         <Text style={styles.title}>Votre déclaration a été validée</Text>
         <Icon type='feather' name='check-circle' size={150} color='#436d8c' />
         <Text style={styles.subTitle}>Merci pour votre coopération</Text>
+        <HomeButton navigation={navigation} />
       </View>
     )
 }
