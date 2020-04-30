@@ -1,0 +1,1 @@
+# OpenStopCovid mobile application
