@@ -27,13 +27,13 @@ const SickButton = ({navigation}) => {
 const styles = StyleSheet.create({
   myButton: {
     width: wp('70%'),
-    maxWidth: 400,
+    maxWidth: 500,
     padding: 3,
     backgroundColor: 'white',
     borderRadius: 10,
     borderWidth: 2,
     borderColor: '#436d8c',
-    margin: 20
+    margin: 15
   },
   textButton: {
     display: 'flex',

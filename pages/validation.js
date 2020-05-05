@@ -6,6 +6,8 @@ import {widthPercentageToDP as wp} from 'react-native-responsive-screen'
 import HomeButton from '../components/home-button'
 
 const Validation = ({navigation}) => {
+  const date = new Date
+
   return (
       <View style={styles.centeredView}>
         <Text style={styles.title}>Votre déclaration a été validée</Text>
