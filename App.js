@@ -3,7 +3,7 @@ import {StyleSheet, Vibration} from 'react-native'
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {enableScreens} from 'react-native-screens'
-import {initManually, requestPermissions} from 'react-native-dp3t-sdk'
+import {initWithDiscovery, requestPermissions} from 'react-native-dp3t-sdk'
 
 import Home from './pages/home'
 import Scanner from './pages/scanner'
@@ -14,25 +14,21 @@ import Validation from './pages/validation'
 export default function App() {
   async function testInit() {
     requestPermissions()
-    await initManually(
-      'org.dpppt.demo',
-      'https://demo.dpppt.org/',
-      'https://demo.dpppt.org/',
-      'LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0R' +
-      'RZ0FFSndKMkErS2taR0p6QlMzM3dEOUUyaEI1K3VNYgpZcitNU2pOUGhmYzR6Q2w2amdSWkFWVHBKbE' +
-      '0wSmI4RERqcDNRUDZhK2VEK1I1SFYyNzhROVN0SUhnPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t'
+    await initWithDiscovery(
+        'org.dpppt.demo',
+        'LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0R' +
+        'RZ0FFWTc3MFZEWjJlZjZCYjh0UXZYWVJpcUFaemtHLwpwNWs0U3pTV3FRY00zNzlqTVN6c3JOaU5nc0' +
+        'hWZlRPeGFqMUFzQ3RrNmJVUDV1cDc3RU5nckVzVkh3PT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t',
+        true
     ).then(() => console.log('init ok !'))
   }
+
   testInit()
   enableScreens()
 
-  const [isAlertMode, setIsAlertMode] = useState(false)
   const Stack = createStackNavigator()
   const options = {headerShown: false}
 
-  if (isAlertMode) {
-    Vibration.vibrate([500, 250, 500, 250])
-  }
 
   return (
     <NavigationContainer>
@@ -46,15 +42,3 @@ export default function App() {
     </NavigationContainer>
   )
 }
-
-const styles = StyleSheet.create({
-  alertMode: {
-    display: 'flex',
-    backgroundColor: 'red',
-    color: "white",
-    textAlign: "center",
-    padding: 25,
-    fontSize: 15,
-    fontWeight: 'bold'
-  }
-});

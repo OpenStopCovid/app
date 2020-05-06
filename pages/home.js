@@ -1,13 +1,13 @@
 import React, {useCallback} from 'react'
 import {View, Text, StyleSheet, Button} from 'react-native'
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen'
-import {useDp3tStatus} from 'react-native-dp3t-sdk'
+import {useDp3tStatus, sync} from 'react-native-dp3t-sdk'
 
 import SickButton from '../components/sick-button'
 import TrackButton from '../components/track-button'
 
 const Home = ({navigation}) => {
-  const [status] = useDp3tStatus()
+  const [status, refreshStatus] = useDp3tStatus()
 
   const handleStatus = useCallback(() => {
     console.log(status)
@@ -21,6 +21,18 @@ const Home = ({navigation}) => {
       </View>
       <View style={styles.section}>
         <TrackButton />
+        <Button
+          title="Force a sync"
+          onPress={async () => {
+            try {
+              await sync()
+            } catch (e) {
+              console.log(e)
+            } finally {
+              refreshStatus()
+            }
+          }}
+        />
         <Button onPress={handleStatus} title='Show Status' />
       </View>
     </View>
