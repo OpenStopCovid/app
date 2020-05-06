@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react'
 import {View, Text, StyleSheet, Button} from 'react-native'
-import {heightPercentageToDP as hp} from 'react-native-responsive-screen'
+import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen'
 import {useDp3tStatus} from 'react-native-dp3t-sdk'
 
 import SickButton from '../components/sick-button'
@@ -29,27 +29,27 @@ const Home = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
+    height: hp('100%'),
     flex: 1,
     backgroundColor: '#FFF',
     alignItems: 'center',
-    justifyContent: 'center',
-    height: hp('100%')
+    justifyContent: 'center'
   },
   header: {
+    justifyContent: 'space-evenly',
     alignItems: 'center',
-    marginTop: 25,
-    height: hp('25%')
+    height: hp('40%')
   },
   section: {
+    justifyContent: 'space-evenly',
     alignItems: 'center',
-    marginTop: 55,
-    height: hp('50%')
+    height: hp('60%')
   },
   subText: {
     color: '#436d8c',
-    fontSize: 20,
+    fontSize: wp('5.75%'),
     textAlign: 'center',
-    marginHorizontal: 40
+    width: wp('90%')
   }
 })
 

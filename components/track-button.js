@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import {start, stop} from 'react-native-dp3t-sdk'
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen'
 
 const TrackButton = () => {
   const [isEnabled, setIsEnabled] = useState(false)
@@ -29,11 +30,6 @@ const TrackButton = () => {
           </Text>
         </View>
       </TouchableOpacity>
-      {isEnabled ?
-        <Text>Activé !</Text>
-        :
-        <Text> </Text>
-      }
     </View>
   )
 }
@@ -45,7 +41,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#436d8c',
-    fontSize: 35
+    fontSize: wp('8%')
   },
   myButton: {
     width: 200,
@@ -88,12 +84,12 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
     textTransform: 'uppercase',
-    fontSize: 32
+    fontSize: 28,
   },
   clearText: {
     color: 'darkgrey',
     textTransform: 'uppercase',
-    fontSize: 28
+    fontSize: 25
   }
 });
 

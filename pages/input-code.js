@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     padding: 15
   },
   myButton: {
-    width: wp('70%'),
+    width: wp('80%'),
     maxWidth: 400,
     padding: 3,
     backgroundColor: 'white',
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     padding: 15,
     color: 'white',
     textTransform: 'uppercase',
-    fontSize: 25,
     backgroundColor: '#436d8c'
   }
 });

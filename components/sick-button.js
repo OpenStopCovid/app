@@ -2,10 +2,9 @@ import React, {useState} from 'react'
 import {Modal, StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import {NavigationContainer} from '@react-navigation/native'
 import {Icon} from 'react-native-elements'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen'
 
 const SickButton = ({navigation}) => {
-  const [modalVisible, setModalVisible] = useState(false)
 
   return (
       <View>
@@ -26,7 +25,7 @@ const SickButton = ({navigation}) => {
 
 const styles = StyleSheet.create({
   myButton: {
-    width: wp('70%'),
+    width: wp('80%'),
     maxWidth: 500,
     padding: 3,
     backgroundColor: 'white',

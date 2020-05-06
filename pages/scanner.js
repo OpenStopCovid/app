@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import {Icon, Button} from 'react-native-elements'
 import {RNCamera} from 'react-native-camera'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen'
 
 import HomeButton from '../components/home-button'
 
@@ -37,23 +37,24 @@ const Scanner = ({navigation}) => {
       </View>
       <View style={styles.scanner}>
         <RNCamera
-          style={{display: 'flex', alignSelf: 'center', width: 200, height: 200, borderRadius: 5, overflow: 'hidden'}}
+          style={{display: 'flex', alignSelf: 'center', width: 250, height: 250, borderRadius: 5, overflow: 'hidden'}}
           captureAudio={false}
           onBarCodeRead={handleBarCodeScanned}
         />
 
       </View>
       <View>
-        {scanned && <Button buttonStyle={{margin: 5, borderRadius: 10, padding: 5}} type='outline' title={'Scanner un autre code'} onPress={() => setScanned(false)} />}
         {code && <Text style={styles.text}>Votre code: {code}</Text>}
       </View>
-      <View style={{display: 'flex', alignSelf: 'center'}}>
-        <TouchableOpacity style={styles.myButton} onPress={() => navigation.navigate('Validation')} >
-          <View style={styles.textButton}>
-            <Icon type='feather' name='camera' color='white' size={50} />
-          </View>
-        </TouchableOpacity>
-      </View>
+      {scanned && (
+        <View style={{display: 'flex', alignSelf: 'center'}}>
+          <TouchableOpacity style={styles.myButton} onPress={() => navigation.navigate('Validation')} >
+            <View>
+              <Text style={styles.textButton}>valider</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      )}
       <HomeButton navigation={navigation} />
     </View>
   )
@@ -61,7 +62,7 @@ const Scanner = ({navigation}) => {
 
 const styles = StyleSheet.create({
   scanner: {
-    margin: 15,
+    margin: 20,
     display: 'flex',
     alignSelf: 'center',
     borderWidth: 2,
@@ -70,34 +71,36 @@ const styles = StyleSheet.create({
     padding: 5
   },
   myButton: {
-    width: 100,
-    height: 100,
-    padding: 2.5,
+    width: wp('80%'),
+    maxWidth: 500,
+    padding: 3,
     backgroundColor: 'white',
-    borderRadius: 180,
+    borderRadius: 10,
     borderWidth: 2,
     borderColor: '#436d8c',
-    margin: 20
+    margin: 15
   },
   textButton: {
-    justifyContent: 'center',
-    width: 91,
-    height: 91,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     textAlign: 'center',
-    alignItems: 'center',
-    borderRadius: 180,
+    borderRadius: 6,
+    overflow: 'hidden',
+    padding: 15,
     backgroundColor: '#436d8c',
-    paddingBottom: 4
+    color: 'white',
+    textTransform: 'uppercase'
   },
   text: {
     color: '#436d8c',
-    fontSize: 18,
+    fontSize: wp('5%'),
     textAlign: 'center',
-    paddingHorizontal: 5
+    paddingHorizontal: 15
   },
   centeredView: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
     alignItems: "center",
     marginTop: 22
   }

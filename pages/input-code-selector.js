@@ -1,7 +1,5 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native'
-import {NavigationContainer} from '@react-navigation/native'
-import {createStackNavigator} from '@react-navigation/stack'
 import {Icon} from 'react-native-elements'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
@@ -39,7 +37,8 @@ const InputCodeSelector = ({navigation}) => {
 
 const styles = StyleSheet.create({
   midHeight: {
-    height: hp('40%')
+    height: hp('45%'),
+    justifyContent: 'center'
   },
   container: {
     flex: 1,
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   myButton: {
-    width: wp('70%'),
+    width: wp('80%'),
     maxWidth: 400,
     margin: 10,
     padding: 3,
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
     paddingTop: 5
   },
   title: {
-    fontSize: 32,
+    fontSize: wp('8%'),
     textAlign: 'center',
     color: '#436d8c',
     textTransform: 'uppercase'
@@ -83,11 +82,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#436d8c',
     paddingHorizontal: 15,
-    fontSize: 18
+    fontSize: wp('5%')
   },
   smallTitle: {
     textAlign: 'center',
-    fontSize: 25,
+    fontSize: wp('6%'),
     color: '#436d8c',
     paddingHorizontal: 15,
   }

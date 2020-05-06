@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import React, {useState, useCallback, useEffect} from 'react'
+import {StyleSheet, Text, View, Button} from 'react-native'
 import {Icon} from 'react-native-elements'
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen'
+import {useDp3tStatus} from 'react-native-dp3t-sdk'
 
 import HomeButton from '../components/home-button'
 
 const Validation = ({navigation}) => {
-  const date = new Date
+  const [status] = useDp3tStatus()
 
   return (
       <View style={styles.centeredView}>
