@@ -1,9 +1,8 @@
-import React, {useState} from 'react'
-import {StyleSheet, Vibration} from 'react-native'
+import React from 'react'
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {enableScreens} from 'react-native-screens'
-import {initWithDiscovery, requestPermissions} from 'react-native-dp3t-sdk'
+import {initWithDiscovery, requestPermissions, sync} from 'react-native-dp3t-sdk'
 
 import Home from './pages/home'
 import Scanner from './pages/scanner'
@@ -12,7 +11,7 @@ import InputCodeSelector from './pages/input-code-selector'
 import Validation from './pages/validation'
 
 export default function App() {
-  async function testInit() {
+  async function init() {     // Initialisation du SDK
     requestPermissions()
     await initWithDiscovery(
         'org.dpppt.demo',
@@ -21,9 +20,10 @@ export default function App() {
         'hWZlRPeGFqMUFzQ3RrNmJVUDV1cDc3RU5nckVzVkh3PT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t',
         true
     ).then(() => console.log('init ok !'))
+    await sync()
   }
 
-  testInit()
+  init()
   enableScreens()
 
   const Stack = createStackNavigator()

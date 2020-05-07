@@ -1,6 +1,8 @@
 ## OpenStopCovid  
 
-Cette applicatioin utilise [DP-3T](https://github.com/DP-3T) adapté pour React-Native par [Fabien Mauquié](https://github.com/fmauquie/react-native-dp3t-sdk).     
+![Open Stop Covid Logo](images/OpenStopCovid_600.png "OpenStopCovid")
+
+Cette applicatioin utilise [DP-3T](https://github.com/DP-3T) adapté à React-Native par [Fabien Mauquié](https://github.com/fmauquie/react-native-dp3t-sdk).     
 
 ### Installation de l'application
 

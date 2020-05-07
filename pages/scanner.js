@@ -1,34 +1,29 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useCallback} from 'react'
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
-import {Icon, Button} from 'react-native-elements'
 import {RNCamera} from 'react-native-camera'
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen'
+
+import {sendIAmInfected} from 'react-native-dp3t-sdk'
 
 import HomeButton from '../components/home-button'
 
 const Scanner = ({navigation}) => {
   const [scanned, setScanned] = useState(false)
   const [code, setCode] = useState(null)
-  const [hasPermission, setHasPermission] = useState(null)
-
+  const date = new Date()
+  const auth = {authorization: code}
+  
   const handleBarCodeScanned = ({data}) => {
     setScanned(true)
     setCode(data)
   }
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const {status} = await RNCamera.requestPermissionsAsync();
-  //     setHasPermission(status === 'granted');
-  //   })();
-  // }, []);
+  const send = useCallback(async () => {
+    await sendIAmInfected(date, auth)
+    console.log('You sent:', date, auth)
+    navigation.navigate('Validation')
+  }, [date, auth])
 
-  // if (hasPermission === null) {
-  //   return <Text>Requesting for camera permission</Text>;
-  // }
-  // if (hasPermission === false) {
-  //   return <Text>No access to camera</Text>;
-  // }
 
   return (
     <View style={styles.centeredView}>
@@ -48,7 +43,7 @@ const Scanner = ({navigation}) => {
       </View>
       {scanned && (
         <View style={{display: 'flex', alignSelf: 'center'}}>
-          <TouchableOpacity style={styles.myButton} onPress={() => navigation.navigate('Validation')} >
+          <TouchableOpacity style={styles.myButton} onPress={send} >
             <View>
               <Text style={styles.textButton}>valider</Text>
             </View>

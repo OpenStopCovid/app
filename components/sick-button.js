@@ -1,6 +1,5 @@
-import React, {useState} from 'react'
-import {Modal, StyleSheet, Text, View, TouchableOpacity} from 'react-native'
-import {NavigationContainer} from '@react-navigation/native'
+import React from 'react'
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import {Icon} from 'react-native-elements'
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen'
 

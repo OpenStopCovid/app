@@ -1,13 +1,10 @@
-import React, {useState, useCallback, useEffect} from 'react'
-import {StyleSheet, Text, View, Button} from 'react-native'
+import React from 'react'
+import {StyleSheet, Text, View} from 'react-native'
 import {Icon} from 'react-native-elements'
-import {useDp3tStatus} from 'react-native-dp3t-sdk'
 
 import HomeButton from '../components/home-button'
 
 const Validation = ({navigation}) => {
-  const [status] = useDp3tStatus()
-
   return (
       <View style={styles.centeredView}>
         <Text style={styles.title}>Votre déclaration a été validée</Text>
