@@ -15,8 +15,8 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* OpenStopCovidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* OpenStopCovidTests.m */; };
 		44B5A8751C74DC39A2D46205 /* libPods-OpenStopCovid-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E1FBE01CFBBC7C4037465E /* libPods-OpenStopCovid-tvOSTests.a */; };
-		5400E7FB24605BC40027F315 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5400E7F924605BC30027F315 /* LaunchScreen.xib */; };
 		545462862464621E008B9263 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545462852464621E008B9263 /* Images.xcassets */; };
+		54CFF36024648E8100E0E59B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54CFF35F24648E8100E0E59B /* LaunchScreen.xib */; };
 		B25D0A158A8536BD0319D5F4 /* libPods-OpenStopCovid-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D5C736F9F06981A3910C7 /* libPods-OpenStopCovid-tvOS.a */; };
 		C2C21456324F50F302CD85B4 /* libPods-OpenStopCovid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1A55E782C55F67DE6895C7 /* libPods-OpenStopCovid.a */; };
 /* End PBXBuildFile section */
@@ -54,8 +54,8 @@
 		2D02E47B1E0B4A5D006451C7 /* OpenStopCovid-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenStopCovid-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* OpenStopCovid-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OpenStopCovid-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C22237B52D0949E93428C6 /* libPods-OpenStopCovid-OpenStopCovidTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenStopCovid-OpenStopCovidTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5400E7FA24605BC30027F315 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = ../../BackUp/OpenStopCovid/ios/OpenStopCovid/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		545462852464621E008B9263 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		54CFF35F24648E8100E0E59B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = OpenStopCovid/LaunchScreen.xib; sourceTree = "<group>"; };
 		54E1FBE01CFBBC7C4037465E /* libPods-OpenStopCovid-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenStopCovid-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B48CEF941A4AD9CB3AA7E0C /* Pods-OpenStopCovid-OpenStopCovidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenStopCovid-OpenStopCovidTests.release.xcconfig"; path = "Target Support Files/Pods-OpenStopCovid-OpenStopCovidTests/Pods-OpenStopCovid-OpenStopCovidTests.release.xcconfig"; sourceTree = "<group>"; };
 		80021995040B8C8B8FD28078 /* Pods-OpenStopCovid-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenStopCovid-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-OpenStopCovid-tvOSTests/Pods-OpenStopCovid-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				54CFF35F24648E8100E0E59B /* LaunchScreen.xib */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				5400E7F924605BC30027F315 /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				545462852464621E008B9263 /* Images.xcassets */,
 			);
@@ -339,7 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5400E7FB24605BC40027F315 /* LaunchScreen.xib in Resources */,
+				54CFF36024648E8100E0E59B /* LaunchScreen.xib in Resources */,
 				545462862464621E008B9263 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,17 +662,6 @@
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5400E7F924605BC30027F315 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5400E7FA24605BC30027F315 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
