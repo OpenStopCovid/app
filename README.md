@@ -16,7 +16,7 @@ Cette application utilise [React Native](https://reactnative.dev/)
  ```brew install node```   
  ```brew install watchman```   
  
- ###### Pour iOS
+ ##### Pour iOS
  
   * xcode (depuis l'appStore)   
   * CocoaPods   
@@ -37,11 +37,11 @@ Cette application utilise [React Native](https://reactnative.dev/)
  ```yarn run anrdoid``` ou lancez le projet depuis Android Studio   
 
  
-###### Informations complémentaires :   
+##### Informations complémentaires :   
  * pour [Android](https://github.com/fmauquie/react-native-dp3t-sdk#necessary-manual-android-setup)   
  * pour [IOS](https://github.com/fmauquie/react-native-dp3t-sdk#necessary-manual-ios-setup)   
  
-###### Références :   
+##### Références :   
  * [DP-3T](https://github.com/DP-3T)   
  * [React-native-DP3T](https://github.com/OpenStopCovid/react-native-dp3t)   
  
