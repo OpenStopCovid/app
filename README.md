@@ -1,6 +1,6 @@
 ## OpenStopCovid  
 
-![Open Stop Covid Logo](images/OpenStopCovid_600.png "OpenStopCovid")
+<img src='images/OpenStopCovid_600.png' alt='OpenStopCovid Logo' width='250'>
 
 Cette applicatioin utilise [DP-3T](https://github.com/DP-3T) adapté à React-Native par [Fabien Mauquié](https://github.com/fmauquie/react-native-dp3t-sdk).     
 

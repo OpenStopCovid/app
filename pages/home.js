@@ -29,9 +29,9 @@ const Home = ({navigation}) => {
         </View>
       )}
       {status && status.healthStatus === 'infected' && (
-        <View style={styles.section}>
-          <Text style={styles.alertText} >Vous êtes malade 😷</Text>
-          <Text style={styles.alertText}>Restez chez vous...</Text>
+        <View style={styles.infected}>
+          <Text style={styles.alertText} >Vous avez été diagnostiqué positif</Text>
+          <Text style={styles.alertText}>Prenez soin de vous</Text>
           <Button onPress={clearData} title='Reset' />
         </View>
       )}
@@ -68,6 +68,12 @@ const styles = StyleSheet.create({
     fontSize: wp('8'),
     fontWeight: 'bold',
     textAlign: 'center'
+  },
+  infected: {
+    height: hp('100%'),
+    width: wp('100%'),
+    backgroundColor: '#DCDCDC',
+    justifyContent: 'space-evenly'
   }
 })
 

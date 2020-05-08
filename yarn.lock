@@ -5099,7 +5099,7 @@ react-native-camera@^3.23.1:
   dependencies:
     prop-types "^15.6.2"
 
-react-native-dp3t-sdk@^0.1.0-alpha.6:
+react-native-dp3t-sdk@^0.1.0-alpha.7:
   version "0.1.0-alpha.7"
   resolved "https://registry.yarnpkg.com/react-native-dp3t-sdk/-/react-native-dp3t-sdk-0.1.0-alpha.7.tgz#5935b64c829d0c3fdec526aa78c09ec6227129a1"
   integrity sha512-eFgHW9WXJkKKJ+pijD8epGzJtL+A3MGBNbcm5dMeSHkItj25Zm7m3D1Ro+FsE3YC8ajBxuwz5L83Ggo1uRJdpg==
